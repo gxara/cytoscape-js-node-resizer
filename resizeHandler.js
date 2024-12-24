@@ -3,13 +3,16 @@
 
   let activeNode = null;
 
-  const createResizeHandle = (node, cy) => {
+  const createResizeHandle = (node, cy, customStyle) => {
     let resizeBox = document.getElementById("resize-box");
 
     activeNode = node;
 
     const styles = {
       grapperColor: "#7711C0",
+      grapperRadius: "50%",
+      grapperSize: "8px",
+      ...customStyle,
     };
 
     if (!resizeBox) {
@@ -27,9 +30,10 @@
       // Grapper Handle - Bottom Right
       let resizeHandleBottomRight = document.createElement("div");
       resizeHandleBottomRight.id = "resize-handle-bottom-right";
-      resizeHandleBottomRight.style.width = "8px";
-      resizeHandleBottomRight.style.height = "8px";
-      resizeHandleBottomRight.style.border = `"4px solid ${styles.grapperColor}"`;
+      resizeHandleBottomRight.style.width = styles.grapperSize;
+      resizeHandleBottomRight.style.height = styles.grapperSize;
+      resizeHandleBottomRight.style.backgroundColor = styles.grapperColor;
+      resizeHandleBottomRight.style.borderRadius = styles.grapperRadius;
       resizeHandleBottomRight.style.position = "absolute";
       resizeHandleBottomRight.style.cursor = "nwse-resize";
       parentDiv.appendChild(resizeHandleBottomRight);
@@ -37,9 +41,10 @@
       // Grapper Handle - Bottom Left
       let resizeHandleBottomLeft = document.createElement("div");
       resizeHandleBottomLeft.id = "resize-handle-bottom-left";
-      resizeHandleBottomLeft.style.width = "8px";
-      resizeHandleBottomLeft.style.height = "8px";
-      resizeHandleBottomLeft.style.border = `"4px solid ${styles.grapperColor}"`;
+      resizeHandleBottomLeft.style.width = styles.grapperSize;
+      resizeHandleBottomLeft.style.height = styles.grapperSize;
+      resizeHandleBottomLeft.style.backgroundColor = styles.grapperColor;
+      resizeHandleBottomLeft.style.borderRadius = styles.grapperRadius;
       resizeHandleBottomLeft.style.position = "absolute";
       resizeHandleBottomLeft.style.cursor = "nesw-resize";
       parentDiv.appendChild(resizeHandleBottomLeft);
@@ -47,9 +52,10 @@
       // Grapper Handle - Top Right
       let resizeHandleTopRight = document.createElement("div");
       resizeHandleTopRight.id = "resize-handle-top-right";
-      resizeHandleTopRight.style.width = "8px";
-      resizeHandleTopRight.style.height = "8px";
-      resizeHandleTopRight.style.border = `"4px solid ${styles.grapperColor}"`;
+      resizeHandleTopRight.style.width = styles.grapperSize;
+      resizeHandleTopRight.style.height = styles.grapperSize;
+      resizeHandleTopRight.style.backgroundColor = styles.grapperColor;
+      resizeHandleTopRight.style.borderRadius = styles.grapperRadius;
       resizeHandleTopRight.style.position = "absolute";
       resizeHandleTopRight.style.cursor = "nesw-resize";
       parentDiv.appendChild(resizeHandleTopRight);
@@ -57,14 +63,16 @@
       // Grapper Handle - Top Left
       let resizeHandleTopLeft = document.createElement("div");
       resizeHandleTopLeft.id = "resize-handle-top-left";
-      resizeHandleTopLeft.style.width = "8px";
-      resizeHandleTopLeft.style.height = "8px";
-      resizeHandleTopLeft.style.border = `"4px solid ${styles.grapperColor}"`;
+      resizeHandleTopLeft.style.width = styles.grapperSize;
+      resizeHandleTopLeft.style.height = styles.grapperSize;
+      resizeHandleTopLeft.style.backgroundColor = styles.grapperColor;
+      resizeHandleTopLeft.style.borderRadius = styles.grapperRadius;
       resizeHandleTopLeft.style.position = "absolute";
       resizeHandleTopLeft.style.cursor = "nwse-resize";
       parentDiv.appendChild(resizeHandleTopLeft);
     }
 
+    // Handle dragging to resize
     let isResizing = false;
     let initialX = 0;
     let initialY = 0;
@@ -241,7 +249,7 @@
       cy.on("tap", "node", function (evt) {
         const node = evt.target;
 
-        createResizeHandle(node, cy);
+        createResizeHandle(node, cy, opts);
         positionHandle(node);
       });
 

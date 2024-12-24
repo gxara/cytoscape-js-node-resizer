@@ -1,0 +1,19 @@
+{
+  "name": "cytoscape-js-node-resizer",
+  "version": "1.0.0",
+  "description": "A zero dependency extension for Cytoscape.js that adds node resizing functionality.",
+  "main": "resizeHandler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gxara/cytoscape-js-node-resizer.git"
+  },
+  "author": "gxara",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gxara/cytoscape-js-node-resizer/issues"
+  },
+  "homepage": "https://github.com/gxara/cytoscape-js-node-resizer#readme"
+}
