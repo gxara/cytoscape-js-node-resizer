@@ -6,8 +6,7 @@ A replacement for [cytoscape.js-noderesize](https://github.com/jhonatandarosa/cy
 
 ![Export-1735055174526](https://github.com/user-attachments/assets/3ea4de90-9720-40d0-a87c-f80456dec1d0)
 
-Created and maintained by [NodeLand team](https://nodeland.io)
-
+This package was created and maintained by [NodeLand. A whiteboard solution](https://nodeland.io) that is heavy dependant on Cytoscape to represent notes as nodes in the canvas.
 
 ## Installation
 ```

@@ -1,6 +1,7 @@
 {
+
   "name": "cytoscape-js-node-resizer",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "A zero dependency extension for Cytoscape.js that adds node resizing functionality.",
   "main": "resizeHandler.js",
   "scripts": {
